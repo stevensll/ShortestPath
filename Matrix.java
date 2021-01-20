@@ -1,8 +1,8 @@
 import java.util.*;
 
 public class Matrix{
-    int[][] CitiesData = new int[10][10];
-    ArrayList<String> CitiesNames = new ArrayList<String>();
+    private int[][] CitiesData = new int[10][10];
+    private ArrayList<String> CitiesNames = new ArrayList<String>();
     
     public Matrix(Scanner input){
         InputParse(input);
@@ -32,7 +32,12 @@ public class Matrix{
 
         }
     }
-
-  
-    
+    public static void Stringed(int[][] arr){
+        for(int i = 0; i < arr.length; i++){
+            System.out.println(Arrays.toString(arr[i]));
+        }
+    }    
+    public int[][] getData(){
+        return CitiesData;
+    }
 }
