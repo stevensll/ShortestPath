@@ -9,15 +9,15 @@ public class ShortestPath{
         test.add(0);
         test.add(3);
         test.add(2);
-        System.out.println(shortestDistance(test2, test));
         System.out.println(shortestDistanceCity(matrix, 0));
 
     }
 
 
-    public static int shortestDistance(int[] current, ArrayList<Integer> visited){
+    public static int shortestDistance(Matrix matrix, ArrayList<Integer> visited, int currentCity){
         int index = -1;
-        for(int i = 0; i < current.length; i++){
+        int[] current = matrix.getData()[currentCity];
+        for(int i = 0; i < matrix.size(); i++){
             if((index == -1 || current[index] > current[i]) && !visited.contains(i)){
                 index = i;
             }
@@ -34,7 +34,8 @@ public class ShortestPath{
         for(int i = 0; i < matrix.size() - 1; i++){
             visited.add(index);
             int temp = index;
-            index = shortestDistance(data[index], visited);
+            index = shortestDistance(matrix, visited, i);
+            System.out.println(""+ temp + index + data[temp][index]);
             distance+=data[temp][index];
         }
         return distance;
