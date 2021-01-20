@@ -32,11 +32,15 @@ public class Matrix{
 
         }
     }
-    public static void Stringed(int[][] arr){
+    public void Stringed(int[][] arr){
         for(int i = 0; i < arr.length; i++){
             System.out.println(Arrays.toString(arr[i]));
         }
     }    
+
+    public int size(){
+        return CitiesNames.size();
+    }
     public int[][] getData(){
         return CitiesData;
     }
