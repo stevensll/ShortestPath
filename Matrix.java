@@ -9,16 +9,24 @@ public class Matrix{
     }
 
     public void InputParse(Scanner input){
-        
+        /*
+        what this parse does is that it collects two inputs (a -> b) and adds them to an ArrayList. If
+        the list does not have these new city pairs, it will add them. This essentially creates the 1 Dimensional
+        version of our cities. Then we add the distances between the cities into the 2D version.
+
+        Assumes that inputs are organized such that a->b, a->c, a->d, b->c, b->d, etc.
+        */
+
         while(input.hasNext()){
+            //get first city
             String city0 = input.next();
-            //gets first city
+            //skip
             input.next();
             //gets second city
             String city1 = input.next();
-
+            //skip
             input.next();
-
+            //get distance
             int distance = Integer.parseInt(input.next());
 
             if(!CitiesNames.contains(city0)) CitiesNames.add(city0);
@@ -32,6 +40,7 @@ public class Matrix{
 
         }
     }
+    // toString method 
     public void Stringed(int[][] arr){
         for(int i = 0; i < arr.length; i++){
             System.out.println(Arrays.toString(arr[i]));
